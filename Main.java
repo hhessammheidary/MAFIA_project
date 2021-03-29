@@ -87,8 +87,8 @@ public class Main {
                         System.out.println(players[i].playerName + ": " + players[i].role);
                     }
                     System.out.println("game started");
-                    Game game = new Game();
-                    game.gameStarted(players);
+                    Game game = new Game(players);
+                    game.gameStarted();
                 }
             }
             else{
@@ -96,5 +96,10 @@ public class Main {
                 continue;
             }
         }
+    }
+    static void Menu(){
+        System.out.println("1)for starting game you should create game:(enter)create_game + names of players");
+        System.out.println("2)after create game you should assign role of players:(enter)assign_role + player name + role");
+        System.out.println("3)after assign role you can start game:(enter)start_game");
     }
 }

@@ -32,4 +32,10 @@ public class Mafia extends Player{
     boolean isHealing() {
         return healing;
     }
+    @Override
+    void refresh() {
+        vote=0;
+        silence=false;
+        healing=false;
+    }
 }

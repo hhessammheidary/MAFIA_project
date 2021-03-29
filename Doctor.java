@@ -32,4 +32,10 @@ public class Doctor extends Player{
     boolean isHealing() {
         return healing;
     }
+    @Override
+    void refresh() {
+        vote=0;
+        silence=false;
+        healing=false;
+    }
 }

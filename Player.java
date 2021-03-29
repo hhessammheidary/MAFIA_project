@@ -15,4 +15,5 @@ public  abstract class  Player {
     abstract boolean isSilence();
     abstract void setHealing();
     abstract boolean isHealing();
+    abstract void refresh();
 }
