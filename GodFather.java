@@ -1,6 +1,7 @@
 public class GodFather extends Player{
     public GodFather(String playerName) {
         super(playerName);
+        role=Role.godfather;
         death=false;
         isMafia=true;
         vote=0;

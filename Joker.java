@@ -1,6 +1,7 @@
 public class Joker extends Player{
     public Joker(String playerName) {
         super(playerName);
+        role=Role.joker;
         death=false;
         isMafia=false;
         vote=0;

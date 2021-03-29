@@ -1,6 +1,7 @@
 public class Doctor extends Player{
     public Doctor(String playerName) {
         super(playerName);
+        role=Role.doctor;
         death=false;
         isMafia=false;
         vote=0;

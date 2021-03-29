@@ -9,6 +9,7 @@ public class Main {
         boolean isGameCreated = false;
         boolean isRoleAssigned = false;
         boolean isGameStarted = false;
+        boolean isNameFound = false;
         System.out.println("welcome to mafia game");
         System.out.println("for start game please enter create_game");
         int x = 0;//for count:assign_role
@@ -23,19 +24,20 @@ public class Main {
                 names = playerNames.split(" ");
                 players = new Player[names.length - 1];
                 System.out.println("game created");
+                System.out.println("please assign roles with assign_role");
             }
-            if (order.equals("assign_role")) {
+            else if (order.equals("assign_role")) {
                 if (!isGameCreated) {
                     System.out.println("no game created");
                     continue;
-                } else {
+                }
+                else {
                     assign_role = scanner.nextLine();
                     roles = assign_role.split(" ");
-                    boolean isNameFound = false;
-                    for (int i = 1; i < names.length; i++) {
-                        if (names[i].equals(roles[2])) {
+                    for(int i = 1; i < names.length; i++){
+                        if (names[i].equals(roles[1])) {
                             isNameFound = true;
-                            switch (roles[3]) {
+                            switch (roles[2]) {
                                 case "joker":
                                     players[x++] = new Joker(names[i]);
                                     break;
@@ -65,12 +67,12 @@ public class Main {
                             }
                         }
                     }
-                    if (!isNameFound) {
+                    if(!isNameFound){
                         System.out.println("user not found");
                     }
                 }
             }
-            if(order.equals("start_game")) {
+            else if(order.equals("start_game")) {
                 isGameStarted = true;
                 if (!isGameCreated) {
                     System.out.println("no game created");
@@ -88,6 +90,10 @@ public class Main {
                     Game game = new Game();
                     game.gameStarted(players);
                 }
+            }
+            else{
+                System.out.println("wrong order, try again");
+                continue;
             }
         }
     }

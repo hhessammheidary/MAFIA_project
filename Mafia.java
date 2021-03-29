@@ -1,6 +1,7 @@
 public class Mafia extends Player{
     public Mafia(String playerName) {
         super(playerName);
+        role=Role.mafia;
         death=false;
         isMafia=true;
         vote=0;

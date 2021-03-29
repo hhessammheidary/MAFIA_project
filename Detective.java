@@ -1,6 +1,7 @@
 public class Detective extends Player{
     public Detective(String playerName) {
         super(playerName);
+        role=Role.detective;
         death=false;
         isMafia=false;
         vote=0;

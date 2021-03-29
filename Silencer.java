@@ -1,6 +1,7 @@
 public class Silencer extends Player{
     public Silencer(String playerName) {
         super(playerName);
+        role=Role.silencer;
         death=false;
         isMafia=true;
         vote=0;

@@ -1,6 +1,7 @@
 public class Villager extends Player{
     public Villager(String playerName) {
         super(playerName);
+        role=Role.villager;
         death=false;
         isMafia=false;
         vote=0;
