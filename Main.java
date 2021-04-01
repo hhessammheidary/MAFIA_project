@@ -1,10 +1,10 @@
 import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
         String order;
         Player[] players = null;
         String[] names = null;
+
         Scanner scanner = new Scanner(System.in);
         boolean isGameCreated = false;
         boolean isRoleAssigned = false;
@@ -15,6 +15,8 @@ public class Main {
         int x = 0;//for count:assign_role
         String assign_role = null;
         String[] roles = new String[3];
+        int numOfVillager;
+        int numOfMafia;
         while (scanner.hasNext()) {
             order = scanner.next();
             if (order.equals("create_game")) {
@@ -78,8 +80,12 @@ public class Main {
                     System.out.println("no game created");
                     continue;
                 }
-                if (x < names.length - 1) {
+                if (x<names.length - 1) {
                     System.out.println("one or more player do not have a role");
+                    continue;
+                }
+                if(isGameStarted){
+                    System.out.println("game has already started");
                     continue;
                 }
                 else {
@@ -91,6 +97,12 @@ public class Main {
                     game.gameStarted();
                 }
             }
+            else if(order.equals("get_game_state")){
+                numOfVillager=countVillager(players);
+                numOfMafia=countMafia(players);
+                System.out.println("villager: " + numOfVillager);
+                System.out.println("mafia: " + numOfMafia);
+            }
             else{
                 System.out.println("wrong order, try again");
                 continue;
@@ -101,5 +113,29 @@ public class Main {
         System.out.println("1)for starting game you should create game:(enter)create_game + names of players");
         System.out.println("2)after create game you should assign role of players:(enter)assign_role + player name + role");
         System.out.println("3)after assign role you can start game:(enter)start_game");
+    }
+    static int countMafia(Player[] players){
+        int x=0;
+        for(int i=0;i< players.length;i++){
+            if(players[i].isMafia){
+                x++;
+            }
+        }
+        return x;
+    }
+    static int countVillager(Player[] players){
+        int x=0;
+        for(int i=0;i< players.length;i++){
+            if(!players[i].isMafia){
+                if(players[i].role.equals("joker")){
+                    continue;
+                }
+                else{
+                    x++;
+                }
+            }
+            return x;
+        }
+        return x;
     }
 }
