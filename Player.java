@@ -9,6 +9,7 @@ public  abstract class  Player {
     protected int vote;
     protected boolean silence;
     protected boolean healing;
+    protected boolean isLastVoteOFNight;
     abstract void voted();
     abstract void isDead();
     abstract void setSilence();

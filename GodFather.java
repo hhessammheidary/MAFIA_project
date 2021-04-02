@@ -7,6 +7,7 @@ public class GodFather extends Player{
         vote=0;
         silence=false;
         healing=false;
+        isLastVoteOFNight=false;
     }
     @Override
     void voted(){
@@ -37,6 +38,6 @@ public class GodFather extends Player{
         vote=0;
         silence=false;
         healing=false;
-
+        isLastVoteOFNight=false;
     }
 }

@@ -7,6 +7,7 @@ public class BulletProof extends Player {
         vote=0;
         silence=false;
         healing=false;
+        isLastVoteOFNight=false;
     }
     @Override
     void voted(){
@@ -43,6 +44,6 @@ public class BulletProof extends Player {
         vote=0;
         silence=false;
         healing=false;
-        cheackVote=false;
+        isLastVoteOFNight=false;
     }
 }

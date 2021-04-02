@@ -1,4 +1,5 @@
 public class Silencer extends Player{
+
     public Silencer(String playerName) {
         super(playerName);
         role=Role.silencer;
@@ -7,6 +8,7 @@ public class Silencer extends Player{
         vote=0;
         silence=false;
         healing=false;
+        isLastVoteOFNight=false;
     }
     @Override
     void voted(){
@@ -37,5 +39,7 @@ public class Silencer extends Player{
         vote=0;
         silence=false;
         healing=false;
+        isLastVoteOFNight=false;
     }
+
 }

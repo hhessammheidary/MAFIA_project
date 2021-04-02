@@ -7,6 +7,7 @@ public class Joker extends Player{
         vote=0;
         silence=false;
         healing=false;
+        isLastVoteOFNight=false;
     }
     Role getRole(){
         return super.role;
@@ -43,5 +44,6 @@ public class Joker extends Player{
         vote=0;
         silence=false;
         healing=false;
+        isLastVoteOFNight=false;
     }
 }

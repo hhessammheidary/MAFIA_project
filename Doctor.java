@@ -7,6 +7,7 @@ public class Doctor extends Player{
         vote=0;
         silence=false;
         healing=false;
+        isLastVoteOFNight=false;
     }
     @Override
     void voted(){
@@ -37,5 +38,6 @@ public class Doctor extends Player{
         vote=0;
         silence=false;
         healing=false;
+        isLastVoteOFNight=false;
     }
 }

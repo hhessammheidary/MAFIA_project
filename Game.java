@@ -7,20 +7,20 @@ public class Game {
     }
 
     static Scanner scanner = new Scanner(System.in);
-    int dayNum = 1;
+    int dayNum=1;
+    int nightNum=1;
     boolean isGameEnd;
-
     public void gameStarted() {
-        Day day = new Day();
-        Night night = new Night();
         String order = null;
         while (scanner.hasNext()) {
+            order=scanner.next();
             dayStart(players);
             dayEnd(players);
+            resetVote(players);
             if(isGameEnd){
                 break;
             }
-
+            night(players);
         }
     }
 
@@ -127,7 +127,6 @@ public class Game {
             }
         }
     }
-
     private void endGameCondition(Player[] players) {
         int x = countMafia(players);
         int y = countVillager(players);
@@ -138,6 +137,137 @@ public class Game {
         if (x == 0) {
             System.out.println("villager win");
             isGameEnd = true;
+        }
+    }
+    private void night(Player[] players){
+        System.out.println("night " + nightNum++);
+        for(int i=0;i< players.length;i++){
+            if(players[i].role.equals("mafia")){
+                if(players[i].death){
+                    continue;
+                }
+                else{
+                    System.out.println(players[i].playerName + ": " + players[i].role);
+                }
+            }
+            if(players[i].role.equals("godfather")){
+                if(players[i].death){
+                    continue;
+                }
+                else{
+                    System.out.println(players[i].playerName + ": " + players[i].role);
+                }
+            }
+            if(players[i].role.equals("silencer")){
+                if(players[i].death){
+                    continue;
+                }
+                else{
+                    System.out.println(players[i].playerName + ": " + players[i].role);
+                }
+            }
+            if(players[i].role.equals("doctor")){
+                if(players[i].death){
+                    continue;
+                }
+                else{
+                    System.out.println(players[i].playerName + ": " + players[i].role);
+                }
+            }
+            if(players[i].role.equals("detective")){
+                if(players[i].death){
+                    continue;
+                }
+                else{
+                    System.out.println(players[i].playerName + ": " + players[i].role);
+                }
+            }
+        }
+        String str1=null;
+        String str2=null;
+        String firstVote=null;
+        String secondVote=null;
+        while (scanner.hasNext()){
+            str1=scanner.next();
+            if(str1.equals("start_game")){
+                System.out.println("game already started");
+            }
+            if(str1.equals("get_game_state")){
+                System.out.println("villager: " + countVillager(players));
+                System.out.println("mafia: " + countMafia(players));
+            }
+            if(str1.equals("end_night")){
+
+            }
+            str2=scanner.next();
+            for(int i=0;i< players.length;i++){
+                if(players[i].playerName.equals(str1)){
+                    if(players[i].role.equals("mafia")){
+                        if(players[i].death){
+                            System.out.println("user is dead");
+                            break;
+                        }
+                        else{
+                            for(int j=0;j< players.length;j++){
+                                if(players[j].playerName.equals(str2)){
+                                    if(players[j].death){
+
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    else if(players[i].role.equals("silencer")){
+                        if(players[i].death){
+                            System.out.println("user is dead");
+                            break;
+                        }
+                        else{
+
+                        }
+                    }
+                    else if(players[i].role.equals("doctor")){
+                        if(players[i].death){
+                            System.out.println("user is dead");
+                            break;
+                        }
+                        else {
+
+                        }
+                    }
+                    else if(players[i].role.equals("detective")){
+                        if(players[i].death){
+                            System.out.println("user is dead");
+                            break;
+                        }
+                        else {
+                            for(int j=0;j< players.length;j++){
+                                if(players[j].playerName.equals(str2)){
+
+                                }
+                            }
+                        }
+                    }
+                    else {
+                        System.out.println("user can not wake up during night");
+                    }
+                }
+            }
+        }
+    }
+    private void resetVote(Player[] players){
+        for(int i=0;i< players.length;i++){
+            players[i].vote=0;
+        }
+    }
+    private void nightVoteCondition(Player player){//for mafias
+        if(player.healing){
+            player.healing=false;
+        }
+        else{
+            if(player instanceof Silencer || player instanceof Mafia || player instanceof GodFather){
+                player.isLastVoteOFNight;
+            }
         }
     }
 }
