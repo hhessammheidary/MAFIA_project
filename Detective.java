@@ -39,5 +39,6 @@ public class Detective extends Player{
         silence=false;
         healing=false;
         isLastVoteOFNight=false;
+        isDetectiveAsked=false;
     }
 }

@@ -75,12 +75,12 @@ public class Main {
                 }
             }
             else if(order.equals("start_game")) {
-                isGameStarted = true;
+                isGameStarted = false;
                 if (!isGameCreated) {
                     System.out.println("no game created");
                     continue;
                 }
-                if (x<names.length - 1) {
+                if(x<players.length) {
                     System.out.println("one or more player do not have a role");
                     continue;
                 }
@@ -89,10 +89,11 @@ public class Main {
                     continue;
                 }
                 else {
-                    for (int i = 0; i < players.length; i++){
-                        System.out.println(players[i].playerName + ": " + players[i].role);
+                    isGameStarted=true;
+                    for (Player player : players) {
+                        System.out.println(player.playerName + ": " + player.role);
                     }
-                    System.out.println("game started");
+                    System.out.println("Ready? Set! Go.");
                     Game game = new Game(players);
                     game.gameStarted();
                 }
@@ -108,11 +109,6 @@ public class Main {
                 continue;
             }
         }
-    }
-    static void Menu(){
-        System.out.println("1)for starting game you should create game:(enter)create_game + names of players");
-        System.out.println("2)after create game you should assign role of players:(enter)assign_role + player name + role");
-        System.out.println("3)after assign role you can start game:(enter)start_game");
     }
     static int countMafia(Player[] players){
         int x=0;

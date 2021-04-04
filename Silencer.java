@@ -40,6 +40,7 @@ public class Silencer extends Player{
         silence=false;
         healing=false;
         isLastVoteOFNight=false;
+        silencerVoteCount=0;
     }
 
 }

@@ -10,6 +10,15 @@ public  abstract class  Player {
     protected boolean silence;
     protected boolean healing;
     protected boolean isLastVoteOFNight;
+    protected int silencerVoteCount;
+    {
+        silencerVoteCount = 0;
+    }
+    protected boolean isDetectiveAsked;
+    {
+        isDetectiveAsked = false;
+    }
+
     abstract void voted();
     abstract void isDead();
     abstract void setSilence();
