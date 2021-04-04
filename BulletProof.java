@@ -4,6 +4,7 @@ public class BulletProof extends Player {
         role=Role.bulletproof;
         death=false;
         isMafia=false;
+        isVillager=true;
         vote=0;
         silence=false;
         healing=false;
@@ -13,7 +14,7 @@ public class BulletProof extends Player {
     void voted(){
         vote++;
     }
-    private int x=2;
+    private int x=1;
     @Override
     void isDead() {
         if(x==0){

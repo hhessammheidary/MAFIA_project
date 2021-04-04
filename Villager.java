@@ -4,6 +4,7 @@ public class Villager extends Player{
         role=Role.villager;
         death=false;
         isMafia=false;
+        isVillager=true;
         vote=0;
         silence=false;
         healing=false;

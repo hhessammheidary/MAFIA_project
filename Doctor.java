@@ -4,6 +4,7 @@ public class Doctor extends Player{
         role=Role.doctor;
         death=false;
         isMafia=false;
+        isVillager=true;
         vote=0;
         silence=false;
         healing=false;

@@ -6,6 +6,7 @@ public  abstract class  Player {
     protected Role role;
     protected boolean death;
     protected boolean isMafia;
+    protected boolean isVillager;
     protected int vote;
     protected boolean silence;
     protected boolean healing;

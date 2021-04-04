@@ -4,6 +4,7 @@ public class Joker extends Player{
         role=Role.joker;
         death=false;
         isMafia=false;
+        isVillager=false;
         vote=0;
         silence=false;
         healing=false;

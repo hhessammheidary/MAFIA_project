@@ -4,6 +4,7 @@ public class Detective extends Player{
         role=Role.detective;
         death=false;
         isMafia=false;
+        isVillager=true;
         vote=0;
         silence=false;
         healing=false;

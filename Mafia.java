@@ -4,6 +4,7 @@ public class Mafia extends Player{
         role=Role.mafia;
         death=false;
         isMafia=true;
+        isVillager=false;
         vote=0;
         silence=false;
         healing=false;

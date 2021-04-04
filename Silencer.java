@@ -5,6 +5,7 @@ public class Silencer extends Player{
         role=Role.silencer;
         death=false;
         isMafia=true;
+        isVillager=false;
         vote=0;
         silence=false;
         healing=false;

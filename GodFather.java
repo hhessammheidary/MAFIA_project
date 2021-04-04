@@ -4,6 +4,7 @@ public class GodFather extends Player{
         role=Role.godfather;
         death=false;
         isMafia=true;
+        isVillager=false;
         vote=0;
         silence=false;
         healing=false;
